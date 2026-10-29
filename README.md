@@ -8,6 +8,7 @@ The KnowledgeBase AI backend is deployed on Render.
 
 - **API Documentation (Swagger UI):** [Explore API Docs](https://knowledgebase-ai.onrender.com/docs)
 - **API Base URL:** https://knowledgebase-ai.onrender.com
+- **APK Download:** [Release](https://github.com/blurr-world/knowledgebase-ai/releases/tag/1.0.0)
 
 Use the interactive Swagger UI to explore endpoints and test API requests.
 
