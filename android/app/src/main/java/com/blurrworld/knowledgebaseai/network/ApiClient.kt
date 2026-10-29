@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiClient {
 
-    private const val BASE_URL = "http://127.0.0.1:8000/"
+    private const val BASE_URL = "https://knowledgebase-ai.onrender.com/"
 
     var tokenProvider: () -> String? = { null }
 

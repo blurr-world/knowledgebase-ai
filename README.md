@@ -1,78 +1,99 @@
-\# KnowledgeBase AI
+# KnowledgeBase AI
 
+KnowledgeBase AI is an AI-powered Android application that allows users to upload PDF documents and ask questions about their content using **Retrieval-Augmented Generation (RAG)**. It provides relevant answers with citations, helping users find information in their documents quickly and efficiently.
 
+## 🚀 Live API
 
-An AI-powered Android application that lets users upload PDF documents and ask questions about their content using retrieval-augmented generation (RAG).
+The KnowledgeBase AI backend is deployed on Render.
 
+- **API Documentation (Swagger UI):** [Explore API Docs](https://knowledgebase-ai.onrender.com/docs)
+- **API Base URL:** https://knowledgebase-ai.onrender.com
 
+Use the interactive Swagger UI to explore endpoints and test API requests.
 
-\## Features
+## Features
 
+- **User Authentication** — User registration and JWT-based authentication.
+- **PDF Upload** — Upload and process PDF documents.
+- **AI-Powered Question Answering** — Ask questions about uploaded documents using RAG.
+- **Cited Answers** — Receive answers with citations to relevant document content.
+- **Secure Document Access** — Ensure users can access only their own documents.
+- **Document Management** — Manage uploaded documents.
 
+## Tech Stack
 
-\- User registration and JWT authentication
+| Component | Technologies |
+|---|---|
+| Android | Kotlin, XML |
+| Backend | Python, FastAPI, SQLAlchemy |
+| Database | MySQL (Aiven) |
+| Vector Database | Qdrant Cloud |
+| Object Storage | Filebase |
+| AI Integration | OpenRouter |
+| Authentication | JWT |
+| Deployment | Render |
 
-\- PDF upload and document processing
+## Project Structure
 
-\- AI-powered question answering with citations
+```text
+KnowledgeBase-AI/
+├── backend/    # FastAPI application and tests
+└── android/    # Android Studio project
+```
 
-\- Secure, user-specific document access
+## Getting Started
 
-\- Document management
+Follow these steps to set up the project locally.
 
+### Prerequisites
 
+- Python installed
+- Android Studio installed
+- Access to the required database, vector database, object storage, and AI services
 
-\## Tech Stack
+### Setup Instructions
 
+1. **Clone the repository.**
 
+   ```bash
+   git clone https://github.com/blurr-world/knowledgebase-ai.git
+   cd knowledgebase-ai
+   ```
 
-\- \*\*Android:\*\* Kotlin, XML
+2. **Configure the backend.**
 
-\- \*\*Backend:\*\* Python, FastAPI, SQLAlchemy
+   Use the example environment file to configure the required environment variables.
 
-\- \*\*Database:\*\* MySQL (Aiven)
+   ```bash
+   cd backend
+   cp .env.example .env
+   ```
 
-\- \*\*Vector Database:\*\* Qdrant Cloud
+   Update `.env` with your credentials and service configuration. Do not commit secrets or API keys to version control.
 
-\- \*\*Object Storage:\*\* Filebase
+3. **Install backend dependencies and start the API.**
 
-\- \*\*AI:\*\* OpenRouter
+   Follow the instructions in `backend/README.md` to install dependencies, configure the environment, and run the FastAPI server.
 
+4. **Set up the Android application.**
 
+   Open the `android/` directory in Android Studio, configure the API base URL to point to your backend, and run the application on an emulator or physical device.
 
-\## Project Structure
+For detailed setup instructions, refer to the README files in the `backend/` and `android/` directories.
 
+## Deployment
 
+The backend can be deployed to [Render](https://render.com/). The Android application communicates with the deployed backend API.
 
-\- `backend/` — FastAPI application and tests
+Before deployment, ensure that all required environment variables are configured and that the database, vector database, object storage, and AI service credentials are valid.
 
-\- `android/` — Android Studio project
+## Security
 
+- Protect API endpoints using JWT authentication.
+- Enforce user-specific access controls for documents.
+- Store credentials and API keys in environment variables.
+- Never commit `.env` files or other sensitive configuration to version control.
 
+## License
 
-\## Getting Started
-
-
-
-1\. Clone the repository.
-
-2\. Configure the backend environment variables using `backend/.env.example`.
-
-3\. Install backend dependencies and run the API.
-
-4\. Open `android/` in Android Studio and run the app.
-
-
-
-See the README files in `backend/` and `android/` for setup instructions.
-
-
-
-\## Deployment
-
-
-
-The backend can be deployed to Render. The Android application connects to the deployed API.
-
-
-
+No license has been specified yet. Add a `LICENSE` file if you intend to distribute the project under an open-source license.
